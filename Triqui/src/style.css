@@ -1,0 +1,15 @@
+#detalleJuego{
+    background-color: green;
+}
+#panelJuego{
+    background-color: blue;
+}
+.cuadrante{
+    background-color: yellow;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+}
+.figuraJugador{
+    font-size: 100px;
+}

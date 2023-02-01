@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="src/style.css" media="screen" />
+  </head>
+  <body onkeydown="keyEvent(event)" onkeyup="metaKeyUp(event)">
+    <div>
+      <h1>Titulo del Juego</h1>
+    </div>
+    <div class="container">
+        <div id="inicioJuego">
+            <div>
+                <h3>Jugador</h3>
+            </div>
+            <div>
+                <input id="inNombreJugador1" type="text" value="" placeholder="Jugador 1">
+                <select name="" id="selectJugador1">
+                    <option value="X">X</option>
+                    <option value="O">O</option>
+                </select>
+            </div>
+            <div>
+                <input id="inNombreJugador2" type="text" value="" placeholder="Jugador 2">
+                <select name="" id="selectJugador2">
+                    <option value="X">X</option>
+                    <option value="O">O</option>
+                </select>
+            </div>
+            <div>
+                <button onclick="btnInicio()">Jugar</button>
+            </div>
+        </div>
+        <div class="container" id="detalleJuego">
+            <h3>Detalles</h3>
+            <div>
+                <Label id="labelNombreJugador1"></Label>
+            </div>
+            <div>
+                <Label id="labelNombreJugador2"></Label>
+            </div>
+        </div>
+        <div name="container" id="panelJuego">
+            <div class="cuadrante" onclick="jugada(1)" id="cajaCuadrante">
+                <label class="figuraJugador" for="" id="figuraJugador1"></label>
+            </div>
+            <div class="cuadrante" onclick="jugada(2)" id="cajaCuadrante">
+                <label class="figuraJugador" for="" id="figuraJugador2"></label>
+            </div>
+        </div>
+    </div>
+    <footer>
+      <div id="Caja" style="background-color: red">Esto es una prueba</div>
+    </footer>
+  </body>
+
+  <script src="src/index.js"></script>
+</html>
