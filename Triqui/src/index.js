@@ -1,9 +1,11 @@
-var jugador1={nombre:'',puntos:0};
-var jugador2={nombre:'',puntos:0};
+var jugador1={nombre:'',puntos:0,turno:0,figura:''};
+var jugador2={nombre:'',puntos:0,Turno:0};
 var arranca=false;
 
-function ObtenerNombreJugador(id){
-
+//Configuracion del sistema 
+function ConfigInicial(){
+  EscondeBloque("detalleJuego");
+  EscondeBloque("panelJuego");
 }
 
 function CargarJugadores(){
@@ -27,13 +29,30 @@ function CargarJugadores(){
 
 }
 
-
-
+function inicio(){
+  ConfigInicial();
+  if(arranca){
+  console.log("Inicio...")
+  }else{
+  
+  }
+}
 
 function EscondeBloque(id){
 var obj= document.getElementById(id).style.display="none";
 }
-
+function MuestraBloque(id){
+var obj= document.getElementById(id).style.display="block";
+}
+var Mayor=0;
+function Tirar(){
+  if(ValidaFigura()){
+    console.log("Tiro Permitido.");
+  }
+  
+  return false;
+}
+//eventos del sistema.
 function btnInicio(){
   var j1= document.getElementById("selectJugador1").options[document.getElementById('selectJugador1').selectedIndex].value;
   var j2= document.getElementById("selectJugador2").options[document.getElementById('selectJugador2').selectedIndex].value;
@@ -41,9 +60,10 @@ function btnInicio(){
     if(j1 != j2){
         arranca=true;
         console.log("Inicio correcto...");
-        inicio();
         CargarJugadores();
       EscondeBloque("inicioJuego");
+      MuestraBloque("detalleJuego");
+      MuestraBloque("panelJuego");
     }else{
     alert("Debes selecionar una figura diferente para cada jugador.");
     }
@@ -51,17 +71,6 @@ function btnInicio(){
 
 }
 
-function inicio(){
-if(arranca){
-console.log("Inicio...")
-}else{
-
-}
-
-
-}
-
-this.inicio();
 function jugada(valor){
     
     switch(valor){
@@ -76,3 +85,14 @@ function jugada(valor){
         default:
     }
 }
+//Validaciones 
+function ValidaFigura(){
+  var j1= document.getElementById("selectJugador1").options[document.getElementById('selectJugador1').selectedIndex].value;
+  var j2= document.getElementById("selectJugador2").options[document.getElementById('selectJugador2').selectedIndex].value;
+  if(j1 == j2){
+    return false;
+  }else{
+    return true;
+  }
+}
+//Arranque 

@@ -4,6 +4,14 @@
 #panelJuego{
     background-color: blue;
 }
+#footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+    background:#999;
+ }
 .cuadrante{
     background-color: yellow;
     width: 120px;
@@ -12,4 +20,19 @@
 }
 .figuraJugador{
     font-size: 100px;
+}
+
+.row-cols{
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+.col{
+    width: 50%;
 }
